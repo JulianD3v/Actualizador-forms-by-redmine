@@ -1,0 +1,29 @@
+2026-10-01|71500|3.0|Validación de flujo de recibos IA, Habil
+2026-10-01|71457|2.4|Creación de usuarios, Historial de chats
+2026-10-01|71498|3.0|Reunión por novedad en soporte para vali
+2026-10-02|71499|3.0|Novedades en plataforma, Asociación de u
+2026-10-02|71500|1.0|Validación de flujo de recibos IA, Habil
+2026-10-02|71455|2.0|Creación de campañas, usuarios y Novedad
+2026-10-02|71457|2.4|Creación de usuarios, Historial de chats
+2026-10-05|71458|3.0|Limpieza de datos y cargue masivo de inf
+2026-10-05|71452|1.0|Revisión de novedades en flujo, Asociaci
+2026-10-05|71455|3.0|Novedades en reporteria, Creación de tem
+2026-10-05|71457|1.4|Creación de usuarios, Historial de chats
+2026-10-06|71534|3.0|Reunión de implementación y desarrollo, 
+2026-10-06|71455|1.0|Novedades con intermitencia en bot, desb
+2026-10-06|71497|3.0|Capacitación agente, Dudas generales en 
+2026-10-06|71457|1.4|Creación de usuarios, Historial de chats
+2026-10-07|71497|2.0|Creación y ajustes del bot y campñas
+2026-10-07|71493|1.0|Desbloqueo de usuarios, Creación de temp
+2026-10-07|71499|2.0|Novedades en plataforma, Asociación de u
+2026-10-07|71457|3.4|Creación de usuarios, Historial de chats
+2026-10-08|71500|3.0|Validación de flujo de recibos IA, Habil
+2026-10-08|71498|1.0|Reunión para entrega de desarrollo de me
+2026-10-08|71533|1.0|Creación de templates, Configuración de 
+2026-10-08|71457|3.4|Creación de usuarios, Historial de chats
+2026-10-09|71498|4.0|Desarrollo de mejoras en filtros, visual
+2026-10-09|71533|2.0|Creación de templates, Desbloqueo de usu
+2026-10-09|71499|2.4|Pruebas de integración con salesforce, D
+2026-10-13|71498|5.0|Desarrollo de mejoras en filtros, visual
+2026-10-13|71499|2.0|Entrega de pruebas de integración con sa
+2026-10-13|71457|1.4|Dudas sobre plataforma, Capacitación sup
