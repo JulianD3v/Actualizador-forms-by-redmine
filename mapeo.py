@@ -1,4 +1,4 @@
-"""Lógica de mapeo Excel (Redmine) -> campos del Google Form."""
+"""Lógica de mapeo Excel (Redmine) -> campos del panel de soporte."""
 import re
 import unicodedata
 from datetime import datetime, timedelta
@@ -13,8 +13,8 @@ CLIENTES_FORM = [
     "POLI GRANCOLOMBIANO", "SERVICREDITO", "SMARTFIT", "SURA", "TAQUERO",
     "UNICEF", "WAKEUP", "WINGO",
 ]
-HORARIOS = ["Laboral", "Adicional"]
-TIPOS = ["General", "Inestabilidad plataforma"]
+HORARIOS = ["Laboral", "No laboral", "Fin de semana", "24 horas"]
+TIPOS = ["General", "Incidencia", "Requerimiento", "Consulta"]
 ESTADOS = ["En proceso", "Cerrado"]
 RESPONSABLES = [
     "Milena Bedoya", "Maryeiny Losada", "Duban Ramirez", "Ronal Vargas",
@@ -33,13 +33,26 @@ def norm(s: str) -> str:
 # Los que no estén aquí ni en CLIENTES_FORM caen en la regla INGENEO + campaña.
 ALIAS_REDMINE_A_FORM = {
     "ARGOS PANAMA": "ARGOS",
-    "BECALL GROUP": "BECALL",
+    "BECALL GROUP": "BECALL OUTSOURCING SAS",
     "SURAMERICANA": "SURA",
     "U. POLITECNICO GRAN COLOMBIANO": "POLI GRANCOLOMBIANO",
 }
 
+# Nombre corto de la tabla -> texto con el que hay que buscarlo en el panel.
+NOMBRE_EN_PANEL = {
+    "MADECENTRO": "Madecentro Colombia SAS",
+    "POLI GRANCOLOMBIANO": "Universidad Politécnico Gran Colombiano",
+}
+
 _FORM_NORM = {norm(c): c for c in CLIENTES_FORM}
 _ALIAS_NORM = {norm(k): v for k, v in ALIAS_REDMINE_A_FORM.items()}
+_PANEL_NORM = {norm(k): v for k, v in NOMBRE_EN_PANEL.items()}
+
+
+def nombre_en_panel(cliente: str) -> str:
+    """Nombre que hay que escribir en el buscador de clientes del panel."""
+    return _PANEL_NORM.get(norm(cliente), str(cliente).strip())
+
 
 RX_PROYECTO = re.compile(r"\[\s*(.*?)\s*-\s*Implementaci", re.I)
 RX_PROYECTO_FALLBACK = re.compile(r"\[\s*(.*?)\s*-")

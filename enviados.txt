@@ -27,3 +27,54 @@
 2026-10-13|71498|5.0|Desarrollo de mejoras en filtros, visual
 2026-10-13|71499|2.0|Entrega de pruebas de integración con sa
 2026-10-13|71457|1.4|Dudas sobre plataforma, Capacitación sup
+2026-10-14|71921|3.0|Implementación de BOT PQRS para presenta
+2026-10-14|71498|3.0|Desarrollo de funcionalidades nuevas de 
+2026-10-14|71457|2.4|Acompañamiento en pruebas de salida a PR
+2026-10-15|71921|3.0|Reuniones de seguimiento interno y aline
+2026-10-15|71498|3.0|Entrega y pruebas de desarrollo para fil
+2026-10-15|71497|1.0|Revisión novedad con transferencias y du
+2026-10-15|71499|1.4|Reunión para pruebas de integración con 
+2026-10-16|71499|2.4|Ajustes de BOT, Carga masiva de etiqueta
+2026-10-16|71457|4.0|Creación de campañas, etiquetas de cierr
+2026-10-16|71458|2.0|Modificación de usuarios, CSU y agrupaci
+2026-10-19|71921|2.0|Reunión de seguimiento, Ajuste de tono d
+2026-10-19|71458|1.0|Revisión de datos para carga masiva, aju
+2026-10-19|71457|2.4|Revisión de novedad con marca de tutela 
+2026-10-19|71499|3.0|Novedad con registro de tareas en SF, Mo
+2026-10-20|71457|2.4|Creación de campañas, Creación de usuari
+2026-10-21|71499|6.0|Novedades con integración de SF, Modific
+2026-10-21|71457|1.4|Creación de campañas, Creación de usuari
+2026-10-21|71455|1.0|Modificación de flows, Asociación de pla
+2026-10-20|71499|3.0|Reunión de integración con SF, pruebas y
+2026-10-20|71458|3.0|Carga masiva de estudiantes, limpieza de
+2026-10-22|71457|2.4|Novedad con chats que ingresan y no se v
+2026-10-23|71455|3.0|Creación de campañas, Creación de usuari
+2026-10-23|71500|1.0|Actualización de vendedores, desbloqueo 
+2026-10-23|71921|2.0|Revisión de novedades y dudas sobre desa
+2026-10-23|71457|2.4|Creación de templates, Creación de usuar
+2026-10-22|71499|6.0|Actualización de flujo, Revisión de nove
+2026-10-26|71921|4.0|Revisión de flujo, refinación de prompt,
+2026-10-26|71500|2.0|Actualización de vendedores en proyecto 
+2026-10-26|71457|2.4|Revisión de dudas con nueva visual de su
+2026-10-27|71921|3.0|Ajustes de bases de conocimiento, actual
+2026-10-27|71493|3.0|Revisión de despliegue de nuevo bot con 
+2026-10-27|71494|1.0|Ajustes de nombres en lineas de whatsapp
+2026-10-27|71457|1.4|Creación de templates, asociación de usu
+2026-10-28|71501|4.0|Revisión de novedad con automatización p
+2026-10-28|71499|1.4|Reunión para integración de chattigo con
+2026-10-28|71921|3.0|Refinamiento de flujo de bot, Flujo de p
+2026-11-03|71921|6.0|Migración de entornos de prueba a PRD, R
+2026-11-03|71457|2.4|Dudas de visual de supervisor, Creación 
+2026-11-04|71498|4.0|Pruebas y Ajustes de plataforma de Capsu
+2026-11-04|71455|2.0|Actualización y creación de flows
+2026-11-04|71457|2.4|Creación de campañas, Creación y actuali
+2026-11-05|71498|3.0|Reunión tecnica para ajustes de webhook 
+2026-11-05|71456|3.4|Creación de usuarios, Actualización de p
+2026-11-06|71457|5.0|Capacitación de llamadas (Agente), Creac
+2026-11-06|71921|3.4|Ajustes de bases de conocimiento, implem
+2026-11-09|71921|3.0|Ajustes sobre proceso de implementación 
+2026-11-05|71500|2.0|Actualización de vendedore , Reunión com
+2026-11-09|71500|2.0|Actualizacion de vendedores, Revisión no
+2026-11-09|71458|3.4|Ajustes y carga de base de datos masiva 
+2026-11-10|71921|5.0|Actualización de subempaques, Desarrollo
+2026-11-10|71457|1.4|Creación de campaña y usuarios. Asociaci

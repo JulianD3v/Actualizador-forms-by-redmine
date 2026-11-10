@@ -1,4 +1,4 @@
-"""Interfaz local: sube el Excel de Redmine, revisa/edita y envía al Google Form.
+"""Interfaz local: sube el Excel de Redmine, revisa/edita y envía al panel de Chattigo.
 
     streamlit run app.py
 """
@@ -14,14 +14,16 @@ import streamlit as st
 
 import mapeo
 
-FORM_URL_DEFAULT = ("https://docs.google.com/forms/d/e/1FAIpQLSe5FEGki1eSVl2X7U-SPxqqH4cCrNaeGeIutIL8aw_qe_yubw/viewform")
+FORM_URL_DEFAULT = "https://chattigosupport.ingeneo.co/soporte"
 
-st.set_page_config(page_title="Redmine → Forms", layout="wide")
-st.title("Cargue masivo Redmine → Google Forms")
+st.set_page_config(page_title="Redmine → Chattigo", layout="wide")
+st.title("Cargue masivo Redmine → Chattigo")
 
 with st.sidebar:
     st.header("Configuración")
-    form_url = st.text_input("URL del formulario (cambia cada mes)", FORM_URL_DEFAULT)
+    form_url = st.text_input("URL del panel", FORM_URL_DEFAULT)
+    usuario = st.text_input("Usuario", placeholder="admin@ingeneo.com.co")
+    clave = st.text_input("Contraseña", type="password")
     responsable = st.selectbox("Responsable", mapeo.RESPONSABLES,
                                index=mapeo.RESPONSABLES.index("Julian Quintero"))
     hora_inicio = st.text_input("Hora de inicio de jornada (HH:MM, 24h)", "08:00")
@@ -77,7 +79,10 @@ editada = st.data_editor(
     },
 )
 
-st.markdown("Cuando el **Estado** es *En proceso* no se rellenan fecha ni hora de cierre.")
+st.markdown(
+    "La **fecha del caso** es la fecha de creación. "
+    "Horas, cierre y observaciones quedan en la tabla y no se envían al panel."
+)
 
 
 def a_cola(df_: pd.DataFrame):
@@ -100,10 +105,13 @@ def a_cola(df_: pd.DataFrame):
 
 
 c1, c2 = st.columns(2)
-prueba = c1.button("🧪 Probar 1 fila (llena el form, NO envía)")
-enviar = c2.button("🚀 Enviar filas marcadas", type="primary")
+prueba = c1.button("Probar 1 fila (llena el caso, NO guarda)")
+enviar = c2.button("Guardar filas marcadas", type="primary")
 
 if prueba or enviar:
+    if not usuario.strip() or not clave:
+        st.warning("Escribe el usuario y la contraseña del panel.")
+        st.stop()
     cola = a_cola(editada)
     if not cola:
         st.warning("No hay filas marcadas para enviar.")
@@ -116,7 +124,8 @@ if prueba or enviar:
         cmd.append("--dry-run")
     log = st.empty()
     lineas = []
-    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"}
+    env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8",
+           "SOPORTE_USUARIO": usuario.strip(), "SOPORTE_CLAVE": clave}
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             text=True, encoding="utf-8", errors="replace", env=env)
     for linea in proc.stdout:
