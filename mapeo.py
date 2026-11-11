@@ -42,6 +42,7 @@ ALIAS_REDMINE_A_FORM = {
 NOMBRE_EN_PANEL = {
     "MADECENTRO": "Madecentro Colombia SAS",
     "POLI GRANCOLOMBIANO": "Universidad Politécnico Gran Colombiano",
+    "BECALL": "BECALL OUTSOURCING SAS",
 }
 
 _FORM_NORM = {norm(c): c for c in CLIENTES_FORM}
