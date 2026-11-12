@@ -40,6 +40,7 @@ ALIAS_REDMINE_A_FORM = {
 
 # Nombre corto de la tabla -> texto con el que hay que buscarlo en el panel.
 NOMBRE_EN_PANEL = {
+    "HDI": "Liberty Colombia",
     "MADECENTRO": "Madecentro Colombia SAS",
     "POLI GRANCOLOMBIANO": "Universidad Politécnico Gran Colombiano",
     "BECALL": "BECALL OUTSOURCING SAS",
@@ -80,6 +81,30 @@ def fmt_hhmm(dt: datetime) -> str:
     return dt.strftime("%H:%M")
 
 
+# El formato viejo llama Detalle a la columna; el actual, Ajus.
+COLUMNAS_DESCRIPCION = ("Detalle", "Ajus", "Ajustes", "Descripción")
+
+
+def columna_descripcion(df: pd.DataFrame) -> str:
+    """Nombre real de la columna con el texto del caso."""
+    por_norm = {norm(c): c for c in df.columns}
+    for nombre in COLUMNAS_DESCRIPCION:
+        real = por_norm.get(norm(nombre))
+        if real is not None:
+            return real
+    encontradas = ", ".join(str(c) for c in df.columns)
+    raise ValueError(
+        "El Excel no tiene columna de descripción. "
+        f"Se espera Detalle o Ajus. Columnas encontradas: {encontradas}."
+    )
+
+
+def texto_celda(valor) -> str:
+    if pd.isna(valor):
+        return ""
+    return str(valor).strip()
+
+
 def construir_filas(df: pd.DataFrame, hora_inicio: str = "08:00",
                     horario="Laboral", tipo="General", estado="Cerrado"):
     """Convierte el Excel en filas listas para editar/enviar.
@@ -88,6 +113,7 @@ def construir_filas(df: pd.DataFrame, hora_inicio: str = "08:00",
     `hora_inicio` y cada una dura `Hora` (decimal, 8.4 = 8h24m); la siguiente
     empieza donde terminó la anterior.
     """
+    col_desc = columna_descripcion(df)
     filas = []
     cursor_por_fecha = {}
     h0, m0 = map(int, hora_inicio.split(":"))
@@ -107,7 +133,7 @@ def construir_filas(df: pd.DataFrame, hora_inicio: str = "08:00",
             "Horario atención": horario,
             "Tipo": tipo,
             "Campaña": campana,
-            "Descripción": str(r["Detalle"]).strip(),
+            "Descripción": texto_celda(r[col_desc]),
             "Estado": estado,
             "Fecha creación": fecha,
             "Hora creación": fmt_hhmm(inicio),

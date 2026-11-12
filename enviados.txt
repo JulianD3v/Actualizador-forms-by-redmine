@@ -78,3 +78,14 @@
 2026-11-09|71458|3.4|Ajustes y carga de base de datos masiva 
 2026-11-10|71921|5.0|Actualización de subempaques, Desarrollo
 2026-11-10|71457|1.4|Creación de campaña y usuarios. Asociaci
+2026-11-10|71494|2.0|Capacitación de agente y supervisor
+2026-11-11|71498|3.0|Ajustes de backend en exportación de exc
+2026-11-11|71457|3.0|Ajustes de atajos de bot, creación de pl
+2026-11-11|71500|2.4|Ajustes en BD de vendedores, Carterizaci
+2026-11-11|71971|1.0|Horas adicionales de trabajo en la contr
+2026-11-03|71970|3.0|Paso a producción de servicios de integr
+2026-11-03|71970|3.0|Paso a producción de servicios de integr
+2026-11-12|71455|4.0|Reunión demostración para entrega de bot
+2026-11-12|71498|2.0|Construcción de limitadores en campos de
+2026-11-12|71500|2.0|Revisión de usuarios carterizados, Revis
+2026-11-12|71457|0.4|Creación de usuarios, Desbloqueo de usua

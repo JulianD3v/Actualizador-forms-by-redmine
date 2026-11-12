@@ -37,7 +37,11 @@ if not archivo:
     st.stop()
 
 df = pd.read_excel(archivo, sheet_name="Formato Cargue").dropna(subset=["Proyecto / Petición"])
-filas = mapeo.construir_filas(df, hora_inicio, horario, tipo, estado)
+try:
+    filas = mapeo.construir_filas(df, hora_inicio, horario, tipo, estado)
+except ValueError as e:
+    st.error(str(e))
+    st.stop()
 
 enviados = set()
 if Path("enviados.txt").exists():
